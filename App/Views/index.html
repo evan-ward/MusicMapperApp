@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="mapperApp">
+  <head>
+    
+  </head>
+  <body>
+    <!-- <div ng-controller="myServiceCtrl"> -->
+      <div ng-controller="searchCtrl">
+
+        <form ng-submit="search()">
+        Genre: <input type="text" ng-model="data.genre" placeholder="Genre">
+        Artist Location: <input type="text" ng-model="data.artistLocation" placeholder="Artist Location">
+        My Location: <input type="text" ng-model="data.myLocation" placeholder="My Location">
+        <button type="submit">Submit</button>
+        </form>
+
+        <div>
+          <p ng-repeat="result in results"> {{ result.name }} </p>
+        </div>
+
+      </div>
+      
+    
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+    <script src="/bower_components/underscore/underscore.js"></script>
+    <script src="/App/Scripts/app.js"></script>
+    <script src="/App/Scripts/controllers/searchCtrl.js"></script>
+    <script src="/App/Scripts/services/echoNestService.js"></script>
+  </body>
+</html>
