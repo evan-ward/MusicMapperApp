@@ -9,7 +9,7 @@ app.service('echoNestService', function($http){
 	this.search = function(genre, artistLocation){
 		var url = "http://developer.echonest.com/api/v4/artist/search?api_key=LOQIHJKEYHYXJT1EG&format=json&artist_end_year_after=present&results=100"
 		if (genre) {
-			url += "&genre="+replaceSpaceWithPlus(genre);
+			url += "&style="+replaceSpaceWithPlus(genre);
 		}
 
 		if (artistLocation) {
@@ -18,7 +18,14 @@ app.service('echoNestService', function($http){
 
 		return $http.get(url).then(function(res){
 			console.log(res);
-			return res.data.response.artists;
+			var artists = res.data.response.artists;
+
+			for(var i=0; i<artists.length; i++) {
+				console.log(artists[i].artist_location);
+				console.log("dividing artist"); 
+			}
+			// res.data.response.artists + res.data.response.artists.location;
+
 		})
 	}
 })
