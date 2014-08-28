@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="mapperApp">
   <head>
-    
   </head>
   <body>
     <!-- <div ng-controller="myServiceCtrl"> -->
       <div ng-controller="searchCtrl">
 
         <form ng-submit="search()">
-        Genre: <input type="text" ng-model="data.genre" placeholder="Genre">
-        Artist Location: <input type="text" ng-model="data.artistLocation" placeholder="Artist Location">
-        My Location: <input type="text" ng-model="data.myLocation" placeholder="My Location">
+        1. Find bands similar to: <input type="text" ng-model="data.artist" placeholder="Artist Name">
+        2. When: <input type="text" ng-model="data.startDate" placeholder="mm/dd/yyyy">
+        <input type="text" ng-model="data.endDate" placeholder="mm/dd/yyyy">
+        3. Where: <input type="text" ng-model="data.myLocation" placeholder="City, State, Zip, etc.">
         <button type="submit">Submit</button>
         </form>
 
@@ -26,6 +26,6 @@
     <script src="/bower_components/underscore/underscore.js"></script>
     <script src="/App/Scripts/app.js"></script>
     <script src="/App/Scripts/controllers/searchCtrl.js"></script>
-    <script src="/App/Scripts/services/echoNestService.js"></script>
+    <script src="/App/Scripts/services/lastfmService.js"></script>
   </body>
 </html>

@@ -1,10 +1,10 @@
 var app = angular.module('mapperApp');
 
-app.controller('searchCtrl', function($scope, echoNestService){
+app.controller('searchCtrl', function($scope, lastfmService){
 	$scope.data = {}; 
 
 	$scope.search = function(){
-		echoNestService.search($scope.data.genre, $scope.data.artistLocation).then(function(res){
+		lastfmService.search($scope.data.artist, $scope.data.myLocation).then(function(res){
 			$scope.results = res;
 		})
 	}
