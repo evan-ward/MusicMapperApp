@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html ng-app="mapperApp">
   <head>
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="b-image">
     <!-- <div ng-controller="myServiceCtrl"> -->
-      <div ng-controller="searchCtrl">
+      <div class="circle" ng-controller="searchCtrl">
+        
 
         <form ng-submit="search()">
-        1. Find bands similar to: <input type="text" ng-model="data.artist" placeholder="Artist Name">
-        2. When: <input type="text" ng-model="data.startDate" placeholder="mm/dd/yyyy">
+        1. Who are you listening to these days? <input type="text" ng-model="data.artist" placeholder="Artist Name">
+        2. When do you want to see a show? <input type="text" ng-model="data.startDate" placeholder="mm/dd/yyyy">
         <input type="text" ng-model="data.endDate" placeholder="mm/dd/yyyy">
-        3. Where: <input type="text" ng-model="data.myLocation" placeholder="City, State, Zip, etc.">
+        3. Where do you want to see a show? <input type="text" ng-model="data.myLocation" placeholder="City, State, Zip, etc.">
         <button type="submit">Submit</button>
         </form>
 
         <div>
-          <p ng-repeat="result in results"> {{ result.name }} </p>
+          <p ng-repeat="result in results"> {{ result.artist }} </p>
         </div>
 
       </div>
